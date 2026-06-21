@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.1 — 2026-06-22
+- Docs: clean up the README.
+
 ## 0.1.0 — 2026-06-21
 First public release.
 

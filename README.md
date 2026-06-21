@@ -5,9 +5,9 @@ Turn any code selection into a **beautiful, shareable image** — without leavin
 ![CodeSnap](media/demo.gif)
 
 ## Why
-Developers post code screenshots constantly (X, LinkedIn, blogs, docs). Today they
-copy/paste into a separate website like Carbon or ray.so. CodeSnap does it
-**inline**: select code → get a gorgeous image → copy or save in two clicks.
+Developers share code screenshots constantly — on X, in blog posts, in docs and PRs.
+Today that means copy/pasting into a separate site like Carbon or ray.so. CodeSnap does
+it **inline**: select code → get a gorgeous image → copy or save in two clicks.
 
 ## Features
 - 🎨 9 hand-tuned themes — Midnight, GitHub Dark, Dracula, Tokyo Night, Nord, Synthwave, Aurora, Ember, Paper
@@ -19,19 +19,21 @@ copy/paste into a separate website like Carbon or ray.so. CodeSnap does it
 - 💾 **Save PNG** up to 4x for crisp retina output
 - 🔒 100% local — your code never leaves your machine. No account, no telemetry.
 
-## Use
-Select code → right-click → **CodeSnap: Capture Selection as Image** (or `Cmd/Ctrl+Alt+S`).
+## Install
+Search for **CodeSnap** in the Extensions view of VS Code or Cursor, or install it from
+[Open VSX](https://open-vsx.org/extension/nullmesh/codesnap).
 
-## Develop
+## Usage
+Select some code → right-click → **CodeSnap: Capture Selection as Image** (or press
+`Cmd/Ctrl+Alt+S`). Adjust the look in the panel, then **Copy** or **Save PNG**.
+
+## Contributing
 ```bash
 npm install
-npm run compile     # or: npm run watch
+npm run watch
 # then press F5 in VS Code / Cursor → "Run Extension"
 ```
-
-## Publish to both stores (2x reach)
-- **VS Code Marketplace** via `vsce publish`
-- **Open VSX** via `ovsx publish` — this is where **Cursor** installs from.
+Issues and PRs welcome.
 
 ## License
-MIT.
+MIT © Null Mesh
