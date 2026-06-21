@@ -1,27 +1,29 @@
-name: Release
+name: release-please
 
 on:
   push:
     branches: [main]
-  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  # 1) Maintain a "release PR" (version bump + CHANGELOG) from Conventional
-  #    Commits. Merging that PR creates the GitHub release + tag.
-  #    Uses RELEASE_TOKEN (a scoped PAT) because the org disables write access
-  #    for the default GITHUB_TOKEN.
+  # Maintains a release PR; when merged it bumps the version, updates the
+  # CHANGELOG, tags the commit, and creates a GitHub release.
   release-please:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     outputs:
-      release_created: ${{ steps.rp.outputs.release_created }}
-      tag_name: ${{ steps.rp.outputs.tag_name }}
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
       - uses: googleapis/release-please-action@v4
-        id: rp
-        with:
-          token: ${{ secrets.RELEASE_TOKEN }}
+        id: release
 
-  # 2) When a release is cut, build the .vsix and publish it.
+  # On release, build the VSIX and publish it.
   publish:
     needs: release-please
     if: ${{ needs.release-please.outputs.release_created == 'true' }}
@@ -49,4 +51,4 @@ jobs:
       - name: Attach VSIX to GitHub release
         run: gh release upload "${{ needs.release-please.outputs.tag_name }}" *.vsix --clobber
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
