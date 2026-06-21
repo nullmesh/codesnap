@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/nullmesh/codesnap/compare/v0.1.0...v0.1.1) (2026-06-21)
+
+
+### Bug Fixes
+
+* remove internal go-to-market notes from the public README ([c8052b2](https://github.com/nullmesh/codesnap/commit/c8052b2d7d0e312507c234389516c9d2819dd98c))
+
 ## 0.1.0 — 2026-06-21
 First public release.
 
