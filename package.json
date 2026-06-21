@@ -1,0 +1,89 @@
+{
+  "name": "codesnap-studio",
+  "displayName": "CodeSnap Studio",
+  "description": "Turn any code selection into a beautiful, shareable image — right from your editor.",
+  "version": "0.1.0",
+  "publisher": "nullmesh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nullmesh/codesnap-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nullmesh/codesnap-studio/issues"
+  },
+  "homepage": "https://github.com/nullmesh/codesnap-studio#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "screenshot",
+    "code image",
+    "carbon",
+    "share",
+    "snippet"
+  ],
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#0b1021",
+    "theme": "dark"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codesnap.capture",
+        "title": "CodeSnap: Capture Selection as Image",
+        "category": "CodeSnap"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "codesnap.capture",
+          "when": "editorHasSelection",
+          "group": "9_cutcopypaste@99"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "codesnap.capture",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "editorTextFocus && editorHasSelection"
+      }
+    ],
+    "configuration": {
+      "title": "CodeSnap Studio",
+      "properties": {
+        "codesnap.defaultTheme": {
+          "type": "string",
+          "default": "midnight",
+          "description": "Default color theme for new snaps."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.js --production",
+    "watch": "node esbuild.js --watch",
+    "compile": "node esbuild.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "esbuild": "^0.21.5",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "highlight.js": "^11.9.0",
+    "html-to-image": "^1.11.11"
+  }
+}
