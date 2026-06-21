@@ -3,7 +3,7 @@
   "displayName": "CodeSnap",
   "description": "Turn any code selection into a beautiful, shareable image — right from your editor.",
   "version": "0.1.0",
-  "publisher": "NullMesh",
+  "publisher": "nullmesh",
   "license": "MIT",
   "repository": {
     "type": "git",
