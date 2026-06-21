@@ -1,12 +1,12 @@
-# CodeSnap Studio
+# CodeSnap
 
 Turn any code selection into a **beautiful, shareable image** — without leaving your editor. Free and open source.
 
-![CodeSnap Studio](media/demo.gif)
+![CodeSnap](media/demo.gif)
 
 ## Why
 Developers post code screenshots constantly (X, LinkedIn, blogs, docs). Today they
-copy/paste into a separate website like Carbon or ray.so. CodeSnap Studio does it
+copy/paste into a separate website like Carbon or ray.so. CodeSnap does it
 **inline**: select code → get a gorgeous image → copy or save in two clicks.
 
 ## Features

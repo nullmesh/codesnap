@@ -30,7 +30,7 @@ async function capture(context: vscode.ExtensionContext) {
 
   const panel = vscode.window.createWebviewPanel(
     "codesnap.preview",
-    "CodeSnap Studio",
+    "CodeSnap",
     vscode.ViewColumn.Beside,
     {
       enableScripts: true,
@@ -106,7 +106,7 @@ function getHtml(webview: vscode.Webview, extensionUri: vscode.Uri): string {
        inlined so it always wins regardless of resource caching. */
     pre.code code { background: transparent !important; padding: 0 !important; }
   </style>
-  <title>CodeSnap Studio</title>
+  <title>CodeSnap</title>
 </head>
 <body>
   <div id="app"></div>
